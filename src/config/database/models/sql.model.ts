@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
     password varchar(200) not null,
     role ENUM('Customer','Admin') not null default 'Customer',
     created_at timestamp default current_timestamp(),
-    updated_at timestamp default current_timestamp() on update current_timestamp(),
+    updated_at timestamp NULL,
     is_delete BOOLEAN DEFAULT FALSE
 );
 
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS wallets (
     user_id int not null unique,
     balance decimal(15,2) default 0.00,
     created_at timestamp default current_timestamp(),
-    updated_at timestamp default current_timestamp() on update current_timestamp(),
+    updated_at timestamp NULL,
     constraint fk_user_wallet FOREIGN KEY (user_id) REFERENCES users(id) on delete cascade 
 );
 `;
