@@ -6,6 +6,7 @@ const config = {
     port : Number(env.DB.DB_PORT),
     user: env.DB.DB_USER,
     password : env.DB.DB_PASSWORD,
+    database: env.DB.DB_NAME,
     waitForConnections:true,
     connectionLimit: 10,
     queueLimit : 0,

@@ -1,9 +1,6 @@
 import { env } from "../../env.config.js";
 
 export const models = `
-CREATE DATABASE IF NOT EXISTS ${env.DB.DB_NAME};
-USE ${env.DB.DB_NAME};
-
 CREATE TABLE IF NOT EXISTS users (
     id int auto_increment primary key,
     user_name varchar(100) not null ,
