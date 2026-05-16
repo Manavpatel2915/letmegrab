@@ -11,7 +11,8 @@ CREATE TABLE IF NOT EXISTS users (
     password varchar(200) not null,
     role ENUM('Customer','Admin') not null default 'Customer',
     created_at timestamp default current_timestamp(),
-    updated_at timestamp default current_timestamp() on update current_timestamp()
+    updated_at timestamp default current_timestamp() on update current_timestamp(),
+    is_delete BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE IF NOT EXISTS wallets (
